@@ -4,7 +4,8 @@ import Quote from "./Quote";
 class QuoteSearcher extends Component {
   state = {
     quotes: [],
-    loading: false
+    loading: false,
+    local_state: 0
   };
 
   componentDidMount() {
@@ -26,11 +27,13 @@ class QuoteSearcher extends Component {
 
     return (
       <div>
+        <h1>Quotes:</h1>
         {this.state.quotes.map(quote => (
           <Quote
             key={quote._id}
             text={quote.quoteText}
             author={quote.quoteAuthor}
+            score={this.score}
           />
         ))}
       </div>

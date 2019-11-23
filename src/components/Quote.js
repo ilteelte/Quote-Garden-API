@@ -2,15 +2,29 @@ import React, { Component } from "react";
 import QuoteSearcher from "./QuoteSearcher";
 
 class Quote extends Component {
-  render() {
-    console.log("Heloo from Quote: ", this.text);
+  state = {
+    // numLikes: 0
+  };
 
-    // console.log("this.quote_text", this.props);
+  //style={ someCondition ? { textAlign:'center', paddingTop: '50%'} : {}}
+
+  render() {
+    console.log("style", this.props.score);
 
     return (
       <div>
         {this.props.text}
-        <p>by:{this.props.author}</p>
+        <div>
+          <p>
+            by:{this.props.author}
+            <button id="Like" onClick={this.increment}>
+              :)
+            </button>
+            <button id="DisLike" onClick={this.decrement}>
+              :(
+            </button>
+          </p>
+        </div>
       </div>
     );
   }
