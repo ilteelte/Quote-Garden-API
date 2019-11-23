@@ -31,10 +31,10 @@ class QuoteSearcher extends Component {
     return (
       <div>
         <h1> Quotes: </h1>
-        {this.state.quotes.map(item => (
+        {this.state.quotes.map((item, index) => (
           <div>
             {item.quoteText}
-            <p>by:{item.quoteAuthor}</p>
+            <p>by: {item.quoteAuthor}</p>
           </div>
         ))}
       </div>
